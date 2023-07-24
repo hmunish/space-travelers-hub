@@ -1,10 +1,11 @@
-/*eslint-disable */
-import PropTypes from "prop-types";
-import "./rocketsCard.css";
-import { useDispatch, useSelector } from "react-redux";
-import { addReservation } from "../../redux/rockets/rocketsSlice";
+import PropTypes from 'prop-types';
+import './rocketsCard.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addReservation } from '../../redux/rockets/rocketsSlice';
 
-function RocketCard({ id, indexNo, img, title, description, reserved }) {
+function RocketCard({
+  id, indexNo, img, title, description, reserved,
+}) {
   const rocketsState = useSelector((state) => state.rocketsList);
   const dispatch = useDispatch();
   const addReservationHandler = (e) => {
@@ -43,11 +44,12 @@ function RocketCard({ id, indexNo, img, title, description, reserved }) {
 }
 
 RocketCard.defaultProps = {
-  id: "",
-  img: "",
-  title: "",
-  description: "",
+  id: '',
+  img: '',
+  title: '',
+  description: '',
   reserved: false,
+  indexNo: '',
 };
 
 RocketCard.propTypes = {
@@ -56,6 +58,7 @@ RocketCard.propTypes = {
   description: PropTypes.string,
   img: PropTypes.string,
   reserved: PropTypes.bool,
+  indexNo: PropTypes.string,
 };
 
 export default RocketCard;
