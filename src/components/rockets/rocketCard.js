@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const RocketCard = function ({
+function RocketCard({
   id, img, title, description,
 }) {
   return (
@@ -9,11 +9,13 @@ const RocketCard = function ({
       <div className="wrapper">
         <h3 className="rocketCard">{title}</h3>
         <p className="rocketCard">{description}</p>
-        <button className="rocketCard">Reserve Rocket</button>
+        <button type="button" className="rocketCard">
+          Reserve Rocket
+        </button>
       </div>
     </div>
   );
-};
+}
 
 RocketCard.defaultProps = {
   id: '',
@@ -22,7 +24,7 @@ RocketCard.defaultProps = {
   description: '',
 };
 
-RocketCard.PropTypes = {
+RocketCard.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
