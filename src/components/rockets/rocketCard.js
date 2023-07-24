@@ -18,7 +18,11 @@ function RocketCard({
       <img className="rocketCard" alt={title} src={img} />
       <div className="wrapper">
         <h3 className="rocketCard">{title}</h3>
-        <p className="rocketCard">{description}</p>
+        <p className="rocketCard">
+          {reserved && <span className="reservedTag">Reserved</span>}
+          {' '}
+          {description}
+        </p>
         {reserved || (
           <button
             onClick={addReservationHandler}
