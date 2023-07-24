@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import './rocketsCard.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addReservation } from '../../redux/rockets/rocketsSlice';
+import {
+  addReservation,
+  deleteReservation,
+} from '../../redux/rockets/rocketsSlice';
 
 function RocketCard({
   id, indexNo, img, title, description, reserved,
@@ -12,6 +15,11 @@ function RocketCard({
     const { indexNo } = e.target.dataset; // Storing index no for clicked rocket item
     const id = rocketsState.value[+indexNo];
     dispatch(addReservation(id)); // Calling reducer to add reservation in the state
+  };
+  const deleteReservationHandler = (e) => {
+    const { indexNo } = e.target.dataset; // Storing index no for clicked rocket item
+    const id = rocketsState.value[+indexNo];
+    dispatch(deleteReservation(id)); // Calling reducer to add reservation in the state
   };
   return (
     <li className="rocketCard" data-id={id}>
@@ -35,6 +43,7 @@ function RocketCard({
         )}
         {reserved && (
           <button
+            onClick={deleteReservationHandler}
             data-index-no={indexNo}
             type="button"
             className="rocketCard cancelBtn"
