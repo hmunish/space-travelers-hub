@@ -4,7 +4,9 @@ import { fetchMissions } from '../redux/missions/missionSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const { missions, isLoading, isError } = useSelector((store) => store.missionsList);
+  const { missions: MissionsVar, isLoading, isError } = useSelector((store) => store.missionsList);
+  const storedMissions = JSON.parse(localStorage.getItem('missions')) || [];
+  const missions = storedMissions.length > 0 ? storedMissions : MissionsVar;
 
   useEffect(() => {
     dispatch(fetchMissions());
