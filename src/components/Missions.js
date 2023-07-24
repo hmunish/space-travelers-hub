@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../redux/missions/missionSlice';
+import './mission.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -27,32 +28,36 @@ const Missions = () => {
   }
 
   return (
-    <table>
-      <thead>
-        <tr className="head">
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>&nbsp;</th>
-        </tr>
-      </thead>
-      <tbody className="t-body">
+    <div className="container">
+      <div className="table-div">
+        <table className="table">
+          <thead className="table-row">
+            <tr className="head">
+              <th className="name-colum">Mission</th>
+              <th className="description-colum">Description</th>
+              <th>Status</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody className="t-body">
 
-        { missions.map((mission) => (
-          <tr key={mission.mission_id} className="row">
-            <td>{mission.name}</td>
-            <td>{mission.description}</td>
-            <td>
-              <span>Not A Member</span>
-            </td>
-            <td className="text-center">
-              <button type="button">Join Mission</button>
-            </td>
-          </tr>
-        ))}
+            { missions.map((mission) => (
+              <tr key={mission.mission_id} className="row">
+                <td className="name-colum">{mission.name}</td>
+                <td className="description-colum">{mission.description}</td>
+                <td>
+                  <span>Not A Member</span>
+                </td>
+                <td className="text-center">
+                  <button type="button">Join Mission</button>
+                </td>
+              </tr>
+            ))}
 
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 export default Missions;
