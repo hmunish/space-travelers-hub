@@ -39,6 +39,9 @@ export const missionSlice = createSlice({
 
       }));
     });
+    builder.addCase(fetchMissions.rejected, (state) => {
+      state.isError = true;
+    });
   },
 });
 
