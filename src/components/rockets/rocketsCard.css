@@ -23,9 +23,23 @@ img.rocketCard {
   width: 21%;
 }
 
+li.rocketCard > .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 21px 0;
+}
+
 h3.rocketCard {
   font-size: 1.5rem;
   opacity: 0.9;
+}
+
+.reservedTag {
+  background-color: rgb(82, 191, 228);
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 button.rocketCard {
@@ -38,8 +52,9 @@ button.rocketCard {
   cursor: pointer;
 }
 
-li.rocketCard > .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 21px 0;
+button.rocketCard.cancelBtn {
+  background-color: #fff;
+  color: gray;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 1px gray;
 }
