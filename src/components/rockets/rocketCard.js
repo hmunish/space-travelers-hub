@@ -49,7 +49,7 @@ RocketCard.defaultProps = {
   title: '',
   description: '',
   reserved: false,
-  indexNo: '',
+  indexNo: 0,
 };
 
 RocketCard.propTypes = {
@@ -58,7 +58,7 @@ RocketCard.propTypes = {
   description: PropTypes.string,
   img: PropTypes.string,
   reserved: PropTypes.bool,
-  indexNo: PropTypes.string,
+  indexNo: PropTypes.number,
 };
 
 export default RocketCard;
