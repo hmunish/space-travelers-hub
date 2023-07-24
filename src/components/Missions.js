@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missionSlice';
+import { fetchMissions, joinMission, cancelMission } from '../redux/missions/missionSlice';
 import './mission.css';
 
 const Missions = () => {
@@ -49,7 +49,10 @@ const Missions = () => {
                   <span>Not A Member</span>
                 </td>
                 <td className="text-center">
-                  <button type="button">Join Mission</button>
+                  { mission.joined
+                    && <button type="button" className="btn-cancel" onClick={() => dispatch(cancelMission(mission.id))}>Leave Mission</button>}
+                  {!mission.joined
+                  && <button type="button" className="btn-join" onClick={() => dispatch(joinMission(mission.id))}>Join Mission</button>}
                 </td>
               </tr>
             ))}
