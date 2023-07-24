@@ -9,7 +9,7 @@ export const fetchRockets = createAsyncThunk(
       const data = res.json();
       return data;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+      return thunkAPI.rejectWithValue();
     }
   },
 );
@@ -23,12 +23,31 @@ const initialState = {
 export const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {},
+  reducers: {
+    addReservation: (state, param) => {
+      const { id } = param.payload;
+      const newRocketsData = state.value.map((e) => {
+        if (e.id !== id) return e;
+        return { ...e, reserved: true };
+      });
+      state.value = newRocketsData;
+    },
+  },
 
   extraReducers: (builder) => {
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.loading = false;
-      state.value = action.payload;
+      state.value = action.payload.map((el) => {
+        const {
+          id, name, flickr_images: flickrImages, description,
+        } = el;
+        return {
+          id,
+          name,
+          flickrImages,
+          description,
+        };
+      });
     });
     builder.addCase(fetchRockets.rejected, (state, action) => {
       state.loading = false;
@@ -41,6 +60,6 @@ export const rocketsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-// export const { addBook, removeBook } = booksSlice.actions;
+export const { addReservation } = rocketsSlice.actions;
 
 export default rocketsSlice.reducer;
