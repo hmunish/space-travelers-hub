@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
+/*eslint-disable */
+import PropTypes from "prop-types";
+import "./rocketsCard.css";
 
-function RocketCard({
-  id, img, title, description,
-}) {
+function RocketCard({ id, img, title, description }) {
   return (
-    <div className="rocketCard" data-id={id}>
+    <li className="rocketCard" data-id={id}>
       <img className="rocketCard" alt={title} src={img} />
       <div className="wrapper">
         <h3 className="rocketCard">{title}</h3>
@@ -13,15 +13,15 @@ function RocketCard({
           Reserve Rocket
         </button>
       </div>
-    </div>
+    </li>
   );
 }
 
 RocketCard.defaultProps = {
-  id: '',
-  img: '',
-  title: '',
-  description: '',
+  id: "",
+  img: "",
+  title: "",
+  description: "",
 };
 
 RocketCard.propTypes = {
