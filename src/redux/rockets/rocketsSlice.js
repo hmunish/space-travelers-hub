@@ -28,7 +28,17 @@ export const rocketsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.loading = false;
-      state.value = action.payload;
+      state.value = action.payload.map((el) => {
+        const {
+          id, name, flickr_images: flickrImages, description,
+        } = el;
+        return {
+          id,
+          name,
+          flickrImages,
+          description,
+        };
+      });
     });
     builder.addCase(fetchRockets.rejected, (state, action) => {
       state.loading = false;
