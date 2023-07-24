@@ -1,13 +1,30 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../redux/missions/missionSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
+  const { missions: MissionsVar, isLoading, isError } = useSelector((store) => store.missionsList);
+  const storedMissions = JSON.parse(localStorage.getItem('missions')) || [];
+  const missions = storedMissions.length > 0 ? storedMissions : MissionsVar;
 
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+  if (isError) {
+    return (
+      <div className="error">
+        <h1>Something went wrong...</h1>
+      </div>
+    );
+  }
 
   return (
     <table>
@@ -20,21 +37,19 @@ const Missions = () => {
         </tr>
       </thead>
       <tbody className="t-body">
-        <tr>
-          <td>
-            <span>data</span>
-          </td>
-          <span>Not a Member</span>
-          <td>
-            <span>Data</span>
-          </td>
-          <td>
-            <span>Active Member</span>
-          </td>
-          <td>
-            <button type="button">Join Mission</button>
-          </td>
-        </tr>
+
+        { missions.map((mission) => (
+          <tr key={mission.mission_id} className="row">
+            <td>{mission.name}</td>
+            <td>{mission.description}</td>
+            <td>
+              <span>Not A Member</span>
+            </td>
+            <td className="text-center">
+              <button type="button">Join Mission</button>
+            </td>
+          </tr>
+        ))}
 
       </tbody>
     </table>
