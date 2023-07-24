@@ -11,6 +11,8 @@ const Rockets = () => {
     dispatch(fetchRockets());
   }, [dispatch]);
 
+  if (rocketsData.loading) return <p className="fetchStatus">Loading...</p>;
+  if (rocketsData.errors) return <p className="error">Error loading the rockets</p>;
   return (
     <ul className="rocketsList">
       {rocketsData.value.map((e) => (

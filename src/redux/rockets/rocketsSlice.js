@@ -9,7 +9,7 @@ export const fetchRockets = createAsyncThunk(
       const data = res.json();
       return data;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+      return thunkAPI.rejectWithValue();
     }
   },
 );
