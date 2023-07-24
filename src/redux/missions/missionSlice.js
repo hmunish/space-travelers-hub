@@ -5,6 +5,7 @@ const initialState = {
   missions: [],
   isLoading: false,
   isError: false,
+  joined: false,
 };
 
 export const fetchMissions = createAsyncThunk('missions/fetchMissions', async (thunkAPI) => {
@@ -24,6 +25,24 @@ export const missionSlice = createSlice({
   name: 'missionsList',
   initialState,
   reducers: {
+    joinMission: (state, action) => {
+      const data = JSON.parse(localStorage.getItem('missions')) || state.missions;
+      const updatedState = data.map((mission) => {
+        if (mission.id !== action.payload) return mission;
+        return { ...mission, joined: true };
+      });
+      state.missions = updatedState;
+      localStorage.setItem('missions', JSON.stringify(updatedState));
+    },
+    cancelMission: (state, action) => {
+      const data = JSON.parse(localStorage.getItem('missions')) || state.missions;
+      const updatedState = data.map((mission) => {
+        if (mission.id !== action.payload) return mission;
+        return { ...mission, joined: false };
+      });
+      state.missions = updatedState;
+      localStorage.setItem('missions', JSON.stringify(updatedState));
+    },
 
   },
   extraReducers: (builder) => {
@@ -45,4 +64,5 @@ export const missionSlice = createSlice({
   },
 });
 
+export const { joinMission, cancelMission } = missionSlice.actions;
 export default missionSlice.reducer;
