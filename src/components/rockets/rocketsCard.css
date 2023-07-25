@@ -20,7 +20,8 @@ li.rocketCard {
 }
 
 img.rocketCard {
-  width: 21%;
+  max-width: 21%;
+  min-width: 21%;
 }
 
 li.rocketCard > .wrapper {
