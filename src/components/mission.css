@@ -11,15 +11,17 @@
 
 .table th,
 .table td {
-  border: 1px solid #131212;
+  border: 1px solid #afabab;
 }
 
 .description-colum {
-  width: 70%;
+  width: 60%;
+  padding: 5px 5px 15px 5px;
 }
 
 .name-colum {
   width: 10%;
+  padding: 5px;
 }
 
 .table-div {
@@ -85,4 +87,14 @@
 
 .row:nth-child(even) .btn-cancel {
   background-color: white;
+}
+
+.status {
+  width: 10%;
+  text-align: center;
+}
+
+.space {
+  width: 10%;
+  text-align: center;
 }

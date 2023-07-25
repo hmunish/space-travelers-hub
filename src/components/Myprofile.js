@@ -7,14 +7,22 @@ const Myprofile = () => {
     (state) => state.rocketsList.reservedRocketsName,
   );
 
+  let missions = useSelector((state) => state.missions) || [];
+  const savedMissions = JSON.parse(localStorage.getItem('missions')) || [];
+  if (savedMissions.length > 0) {
+    missions = savedMissions;
+  }
+  const myMissions = missions.filter((mission) => mission.joined === true);
+
   return (
     <section className="display-missions-rockets">
       <div>
         <h1>My missions</h1>
         <ul>
-          <li>Mars</li>
-          <li>Mars</li>
-          <li>Mars</li>
+          {myMissions.map((mission) => (
+            <li key={mission.id}>{mission.name}</li>
+
+          ))}
         </ul>
       </div>
       <div>
