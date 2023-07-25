@@ -28,7 +28,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -55,7 +54,9 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Add_reservation_for_rockets]**
+- **[Cancel_reservation_for_rockets]**
 - **[Join_space_mission]**
+- **[Leaving_space_mission]**
 - **[View_profile]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
