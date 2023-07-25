@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test rockets component should match the snapshot 1`] = `
+<section
+  className="display-missions-rockets"
+>
+  <div>
+    <h1>
+      My missions
+    </h1>
+    <ul />
+  </div>
+  <div>
+    <h1>
+      My Rockets
+    </h1>
+    <ul />
+  </div>
+</section>
+`;
