@@ -33,6 +33,11 @@ a {
   font-size: 17px;
 }
 
+.nav-list li a.active {
+  color: #e99e12;
+  text-decoration: underline;
+}
+
 .mission-link {
   border-right: 1px solid black;
   padding-right: 20px;
