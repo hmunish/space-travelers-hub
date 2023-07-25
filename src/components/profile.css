@@ -1,0 +1,23 @@
+.display-missions-rockets {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+.display-missions-rockets > div {
+  width: 50%;
+  padding: 15px;
+  box-shadow: 0 0 5px;
+}
+
+.display-missions-rockets > div > ul {
+  list-style: none;
+  padding: 5px;
+}
+
+.display-missions-rockets > div > ul > li {
+  padding: 15px;
+  border-bottom: 1px solid gray;
+}
