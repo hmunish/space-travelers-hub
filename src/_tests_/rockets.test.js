@@ -1,24 +1,24 @@
-import renderer from "react-test-renderer";
-import Rockets from "../components/Rockets";
-import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import Rockets from '../components/Rockets';
 
 const mockStore = configureStore([]);
 
-describe("test rockets component", () => {
+describe('test rockets component', () => {
   const mockRockets = [
     {
       id: 1,
-      name: "Falcon",
-      flickrImages: "",
-      description: "Falcon description",
+      name: 'Falcon',
+      flickrImages: '',
+      description: 'Falcon description',
       reserved: false,
     },
     {
       id: 2,
-      name: "Starship",
-      flickrImages: "",
-      description: "Starship description",
+      name: 'Starship',
+      flickrImages: '',
+      description: 'Starship description',
       reserved: true,
     },
   ];
@@ -30,12 +30,12 @@ describe("test rockets component", () => {
       errors: null,
     },
   });
-  it("should match the snapshot", () => {
+  it('should match the snapshot', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
           <Rockets />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
