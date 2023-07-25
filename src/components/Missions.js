@@ -43,8 +43,8 @@ const Missions = () => {
             <tr className="head">
               <th className="name-colum">Mission</th>
               <th className="description-colum">Description</th>
-              <th>Status</th>
-              <th>&nbsp;</th>
+              <th className="status">Status</th>
+              <th className="space">&nbsp;</th>
             </tr>
           </thead>
           <tbody className="t-body">
@@ -52,7 +52,7 @@ const Missions = () => {
               <tr key={mission.id} className="row">
                 <td className="name-colum">{mission.name}</td>
                 <td className="description-colum">{mission.description}</td>
-                <td>
+                <td className="status">
                   {!mission.joined && (
                     <span className="not-member">NOT A MEMBER</span>
                   )}
@@ -60,7 +60,7 @@ const Missions = () => {
                     <span className="member">Active Member</span>
                   )}
                 </td>
-                <td className="text-center">
+                <td className="space">
                   {mission.joined && (
                     <button
                       type="button"
