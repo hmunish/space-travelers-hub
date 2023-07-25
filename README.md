@@ -35,7 +35,7 @@
 
 # 📖 [Space_Travellers_Hub] <a name="about-project"></a>
 
-**[Space_Travellers_Hub]** is a web application to
+**[Space_Travellers_Hub]** is a web application to display details about rocktes & space missions. It allows users to book rockets & join space missions.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -44,6 +44,8 @@
 <details>
   <summary>Client</summary>
   <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
 </details>
