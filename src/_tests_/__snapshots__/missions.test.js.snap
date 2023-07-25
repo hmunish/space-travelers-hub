@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Missions component should render correct snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="table-div"
+  >
+    <table
+      className="table"
+    >
+      <thead
+        className="table-row"
+      >
+        <tr
+          className="head"
+        >
+          <th
+            className="name-colum"
+          >
+            Mission
+          </th>
+          <th
+            className="description-colum"
+          >
+            Description
+          </th>
+          <th
+            className="status"
+          >
+            Status
+          </th>
+          <th
+            className="space"
+          >
+             
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="t-body"
+      >
+        <tr
+          className="row"
+        >
+          <td
+            className="name-colum"
+          >
+            Mission 1
+          </td>
+          <td
+            className="description-colum"
+          >
+            This is mission 1
+          </td>
+          <td
+            className="status"
+          >
+            <span
+              className="member"
+            >
+              Active Member
+            </span>
+          </td>
+          <td
+            className="space"
+          >
+            <button
+              className="btn-cancel"
+              onClick={[Function]}
+              type="button"
+            >
+              Leave Mission
+            </button>
+          </td>
+        </tr>
+        <tr
+          className="row"
+        >
+          <td
+            className="name-colum"
+          >
+            Mission 2
+          </td>
+          <td
+            className="description-colum"
+          >
+            This is mission 2
+          </td>
+          <td
+            className="status"
+          >
+            <span
+              className="not-member"
+            >
+              NOT A MEMBER
+            </span>
+          </td>
+          <td
+            className="space"
+          >
+            <button
+              className="btn-join"
+              onClick={[Function]}
+              type="button"
+            >
+              Join Mission
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
