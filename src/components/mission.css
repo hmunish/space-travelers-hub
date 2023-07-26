@@ -1,0 +1,100 @@
+.head th {
+  text-align: left;
+  padding-block: 1rem;
+  border-right: 1px solid black;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #afabab;
+}
+
+.description-colum {
+  width: 60%;
+  padding: 5px 5px 15px 5px;
+}
+
+.name-colum {
+  width: 10%;
+  padding: 5px;
+}
+
+.table-div {
+  width: 90%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-member {
+  border-radius: 5px;
+  border: 1px solid grey;
+  color: white;
+  background-color: grey;
+  padding: 2px;
+}
+
+.btn-join {
+  font-size: 17px;
+  padding: 5px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.member {
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(13, 158, 216);
+  padding: 2px;
+}
+
+.btn-cancel {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border-color: red;
+  color: red;
+}
+
+.row:nth-child(odd) {
+  background-color: #ccc;
+}
+
+.row:nth-child(odd) .btn-cancel {
+  background-color: #ccc;
+}
+
+.row:nth-child(even) {
+  background-color: white;
+}
+
+.row:nth-child(even) .btn-join {
+  background-color: white;
+}
+
+.row:nth-child(odd) .btn-join {
+  background-color: #ccc;
+}
+
+.row:nth-child(even) .btn-cancel {
+  background-color: white;
+}
+
+.status {
+  width: 10%;
+  text-align: center;
+}
+
+.space {
+  width: 10%;
+  text-align: center;
+}

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test rockets component should match the snapshot 1`] = `
+<ul
+  className="rocketsList"
+>
+  <li
+    className="rocketCard"
+    data-id={1}
+  >
+    <img
+      alt="Falcon"
+      className="rocketCard"
+      src=""
+    />
+    <div
+      className="wrapper"
+    >
+      <h3
+        className="rocketCard"
+      >
+        Falcon
+      </h3>
+      <p
+        className="rocketCard"
+      >
+         
+        Falcon description
+      </p>
+      <button
+        className="rocketCard"
+        data-index-no={0}
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve Rocket
+      </button>
+    </div>
+  </li>
+  <li
+    className="rocketCard"
+    data-id={2}
+  >
+    <img
+      alt="Starship"
+      className="rocketCard"
+      src=""
+    />
+    <div
+      className="wrapper"
+    >
+      <h3
+        className="rocketCard"
+      >
+        Starship
+      </h3>
+      <p
+        className="rocketCard"
+      >
+        <span
+          className="reservedTag"
+        >
+          Reserved
+        </span>
+         
+        Starship description
+      </p>
+      <button
+        className="rocketCard cancelBtn"
+        data-index-no={1}
+        onClick={[Function]}
+        type="button"
+      >
+        Cancel Reservation
+      </button>
+    </div>
+  </li>
+</ul>
+`;
